@@ -2,6 +2,12 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TiketController;
+use App\Models\TipeTicket;
+
+Route::get('/tiket', [TiketController::class, 'index']);
+Route::post('/tiket/output', [TiketController::class, 'output'])->name('tiket.output');
+
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Auth;
 
@@ -64,3 +70,4 @@ Route::middleware(['auth', 'admin'])->group(function () {
     // CRUD event hanya untuk admin
     Route::resource('events', EventController::class);
 });
+
