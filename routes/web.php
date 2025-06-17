@@ -4,13 +4,12 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TiketController;
 use App\Models\TipeTicket;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EventController;
+use Illuminate\Support\Facades\Auth;
 
 Route::get('/tiket', [TiketController::class, 'index']);
 Route::post('/tiket/output', [TiketController::class, 'output'])->name('tiket.output');
-
-use App\Http\Controllers\EventController;
-use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
