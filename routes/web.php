@@ -4,11 +4,9 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\HomeController;
 
-// Halaman awal
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -52,8 +50,6 @@ Route::post('/logout', function () {
     request()->session()->regenerateToken();
     return redirect('/');
 })->name('logout');
-
-
 
 // Route untuk dashboard admin
 Route::middleware(['auth', 'admin'])->group(function () {
