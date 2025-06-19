@@ -1,0 +1,1 @@
+Fitur riwayat pembelian akan mencatat transaksi pengguna.

@@ -13,7 +13,7 @@ class TiketController extends Controller
         return view('tiket.index', compact('tickets'));
     }
 
-     public function output(Request $request)
+    public function output(Request $request)
     {
         $tipe = $request->input('tipe');
         $jumlah = $request->input('jumlah');

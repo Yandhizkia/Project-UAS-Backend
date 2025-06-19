@@ -10,7 +10,6 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-
         $this->call([
             TipeTicketSeeder::class,
         ]);
@@ -21,6 +20,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
             'password' => Hash::make('1234'),
             'role' => 'admin',
+
 
         ]);
 
