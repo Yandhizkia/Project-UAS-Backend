@@ -32,15 +32,14 @@
                     <p class="text-sm mb-1">Lokasi: {{ $event->lokasi }}</p>
                     <p class="text-sm mb-1">Tanggal: {{ \Carbon\Carbon::parse($event->tanggal)->format('d M Y') }}</p>
                     <p class="text-sm mb-4">Harga: Rp{{ number_format($event->harga, 0, ',', '.') }}</p>
-                    <a href="{{ url('/tiket') }}" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
-                        Pesan Tiket
-                    </a>
+                <a href="{{ url('/tiket') }}" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition">
+                    Pesan Tiket
+                </a>
                 </div>
             @empty
                 <p class="text-gray-400">Belum ada event tersedia.</p>
             @endforelse
         </div>
     </main>
-
 </body>
 </html>
