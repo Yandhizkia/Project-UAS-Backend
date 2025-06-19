@@ -7,6 +7,7 @@ use App\Models\TipeTicket;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EventController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\PurchaseHistoryController;
 
 Route::get('/tiket', [TiketController::class, 'index']);
 Route::post('/tiket/output', [TiketController::class, 'output'])->name('tiket.output');
@@ -21,6 +22,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    Route::get('/purchase-history', [PurchaseHistoryController::class, 'index'])->name('purchase.history');
 });
 
 require __DIR__.'/auth.php';
